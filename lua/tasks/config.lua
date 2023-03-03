@@ -6,6 +6,7 @@ local config = {
       cmake = {
         cmd = 'cmake',
         build_dir = tostring(Path:new('{cwd}', 'build', '{os}-{build_type}')),
+        run_dir = tostring(Path:new('{cwd}', 'build', '{os}-{build_type}')),
         build_type = 'Debug',
         dap_name = 'lldb',
         args = {

@@ -197,9 +197,10 @@ local function run(module_config, _)
     return nil
   end
 
+  local cwd = module_config.run_dir and parse_dir(module_config.run_dir, module_config.build_type).filename or target_path:parent().filename
   return {
     cmd = target_path.filename,
-    cwd = target_path:parent().filename,
+    cwd = cwd,
   }
 end
 
